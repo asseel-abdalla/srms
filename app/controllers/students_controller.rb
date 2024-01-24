@@ -1,11 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
 
-  # GET /students or /students.json
-  def index
-    @students = Student.all
-  end
-
   # GET /students/1 or /students/1.json
   def show
   end
@@ -13,6 +8,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @students = Student.all.order(updated_at: :desc, created_at: :desc)
   end
 
   # GET /students/1/edit
@@ -25,7 +21,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to student_url(@student), notice: "Student was successfully created." }
+        format.html { redirect_to new_student_path, notice: "Student was successfully created." }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new, status: :unprocessable_entity }
