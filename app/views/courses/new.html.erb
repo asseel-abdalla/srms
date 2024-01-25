@@ -1,9 +1,29 @@
+<p style="color: green"><%= notice %></p>
 <h1>New course</h1>
+
+<%= link_to "Back to Home", root_path %>
+
+<br> <br>
 
 <%= render "form", course: @course %>
 
 <br>
 
 <div>
-  <%= link_to "Back to courses", courses_path %>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Course Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 </div>

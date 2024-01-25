@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :results
   resources :courses
   root 'home#index'
   resources :students, except: :index

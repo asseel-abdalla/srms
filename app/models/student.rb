@@ -2,6 +2,10 @@ class Student < ApplicationRecord
     validates :first_name, :last_name, :date_of_birth, presence: true
     validate :date_of_birth_validations
 
+    def full_name
+        "#{first_name} #{last_name}"
+    end
+    
     private
     
     def date_of_birth_validations
@@ -14,5 +18,5 @@ class Student < ApplicationRecord
                 errors.add(:date_of_birth, "cannot be in the future")
             end
         end
-  end
+    end
 end

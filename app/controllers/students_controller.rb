@@ -18,6 +18,7 @@ class StudentsController < ApplicationController
   # POST /students or /students.json
   def create
     @student = Student.new(student_params)
+    @students = Student.all.order(updated_at: :desc, created_at: :desc)
 
     respond_to do |format|
       if @student.save
