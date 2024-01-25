@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Student Results Management System application.
 
-Things you may want to cover:
+It is written in Ruby on Rails using MVC framework.
 
-* Ruby version
+## Requirements
+Install [Docker](https://www.docker.com/products/docker-desktop/).
+Run the following commands
 
-* System dependencies
+```bash
+docker volume create ruby-bundle-cache
+alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
+```
 
-* Configuration
+## Running the app
+Run the following commands
+```bash
+docked rails db:migrate
+docked rails server
+```
 
-* Database creation
+Open `http://localhost:3000` on your browser.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
