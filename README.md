@@ -18,6 +18,7 @@ alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle 
 Run the following commands
 
 ```bash
+docked bundle install
 docked rails db:migrate
 docked rails server
 ```
