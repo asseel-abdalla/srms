@@ -6,6 +6,7 @@ It is written in Ruby on Rails using MVC framework.
 
 ## Requirements
 Install [Docker](https://www.docker.com/products/docker-desktop/).
+
 Run the following commands
 
 ```bash
@@ -15,6 +16,7 @@ alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle 
 
 ## Running the app
 Run the following commands
+
 ```bash
 docked rails db:migrate
 docked rails server
